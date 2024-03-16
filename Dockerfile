@@ -10,6 +10,8 @@ COPY . /app
 # Install Flask and NLTK (included in requirements.txt)
 RUN pip install Flask nltk
 RUN pip install scikit-learn
+RUN pip install flask-cors
+
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
