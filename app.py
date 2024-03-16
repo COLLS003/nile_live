@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS # Import CORS
+
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_selection import SelectPercentile
@@ -11,6 +13,7 @@ nltk.download('stopwords')
 nltk.download('punkt')
 
 app = Flask(__name__)
+CORS(app) # Add CORS to your Flask app
 
 # Load the saved Logistic Regression model and associated preprocessing transformers
 with open('reg_classifier.pkl', 'rb') as f:
